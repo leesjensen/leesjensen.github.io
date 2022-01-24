@@ -1,0 +1,234 @@
+@import url(//fonts.googleapis.com/css?family=Comfortaa);
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: Comfortaa, Arial, Helvetica, sans-serif;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  overflow-y: hidden;
+  background-color: black;
+  animation: paintWallpaper 3s;
+}
+
+header {
+  flex: 0 0 50px;
+}
+
+main {
+  flex: 1 0 calc(90vh - 50px);
+  color: hsl(218, 73%, 97%);
+  padding: 2em;
+  font-size: 14px;
+  overflow-y: auto;
+}
+section p {
+  max-width: 40em;
+}
+
+footer {
+  flex: 0 0 10vh;
+  border-top: rgb(68, 66, 62) solid thin;
+  background-color: hsl(33deg 100% 91% / 45%);
+
+  display: flex;
+  flex-direction: row;
+}
+
+footer .weather {
+  text-align: center;
+  flex: 0 1 50vw;
+  order: 2;
+
+  color: rgb(120 92 2);
+
+  display: grid;
+  grid-template-rows: 1.5em 3fr;
+  grid-template-areas: 'header' 'content';
+  justify-content: center;
+}
+
+footer .weather p {
+  grid-area: header;
+}
+
+footer .weather img {
+  grid-area: content;
+  width: 100%;
+  height: 6vh;
+  background: hsl(235deg 11% 23% / 36%);
+  border-radius: 10px;
+}
+
+footer .contact-info {
+  flex: 1 1 25vw;
+  order: 1;
+  color: #33322d;
+  float: right;
+  font-size: larger;
+  padding: 5px;
+}
+
+footer .slideshow {
+  flex: 0 1 25vw;
+  order: 3;
+}
+
+footer .slideshow .carousel {
+  width: calc(1.2 * (10vh));
+  float: right;
+  padding: 5px;
+  border-radius: 5px;
+  border: 3px rgb(233, 223, 91) solid;
+}
+
+footer .footer-catch {
+  color: rgb(120 92 2);
+}
+
+.b-box-row {
+  display: inline;
+}
+
+.b-box {
+  display: inline-block;
+}
+
+.b-box:hover {
+  display: inline-block;
+  transform: scale(1.2);
+  cursor: pointer;
+}
+
+.inset-image {
+  border-radius: 100%;
+  margin: 0.5em;
+  border-radius: 100%;
+  shape-outside: circle();
+  margin: 10px 10px 10px 0;
+}
+
+.inset-image-left {
+  float: left;
+}
+
+.special-deal {
+  border-left: rgb(156 84 2) solid 1em;
+  background: hsla(19, 54%, 55%, 0.69);
+  padding: 1em;
+  border-radius: 5px;
+}
+
+.special-deal::before {
+  content: '\1F381 \2003 Special deal';
+  display: block;
+  color: rgb(90, 48, 1);
+  padding-bottom: 0.25em;
+}
+
+.control-list {
+  height: 2em;
+  margin-bottom: 0.5em;
+}
+
+.control-list button {
+  float: right;
+}
+
+.control-list h3 {
+  float: left;
+}
+
+#bucket-list-open {
+  position: absolute;
+  top: 80px;
+  right: 0;
+  background: rgb(249, 184, 44);
+  border: rgb(157, 114, 21) solid thin;
+  border-radius: 10px 0 0 10px;
+}
+
+#bucket-list {
+  position: absolute;
+  display: none;
+  top: 55px;
+  right: 0;
+  color: black;
+  padding: 1em;
+  background: #feeadb;
+  border: rgb(157, 114, 21) solid thin;
+  border-radius: 10px 0 0 10px;
+  width: min(100vw, 300px);
+  height: calc(90vh - 50px);
+  overflow: scroll;
+}
+
+#bucket-list ol {
+  padding: 0;
+}
+
+#bucket-list li {
+  list-style-type: none;
+  border: solid thin black;
+  border-radius: 5px;
+  background: #eaeaea;
+  padding: 0.5em 1em;
+  margin-bottom: 1em;
+}
+
+#bucket-list li img {
+  border: thin black solid;
+  transform: scale(0.8);
+}
+
+.date {
+  color: #bc940c;
+  font-style: italic;
+  margin: 0;
+  text-align: right;
+}
+
+.wallpaper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -100;
+  height: 100vh;
+  width: 100vw;
+  background: url('beach80-20.jpg') no-repeat center center fixed;
+  transform: rotateY(180deg);
+  background-size: cover;
+  /* filter: grayscale(1); */
+  filter: brightness(80%);
+}
+
+@keyframes paintWallpaper {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 50;
+  }
+  100% {
+    opacity: 100;
+  }
+}
+
+@media (max-height: 600px) {
+  footer {
+    display: none;
+  }
+  main {
+    flex: 1 0 calc(100vh - 50px);
+  }
+  #bucket-list {
+    height: calc(100vh - 50px);
+  }
+}
