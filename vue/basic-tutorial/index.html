@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="main.css" />
+    <meta charset="UTF-8" />
+    <script src="https://unpkg.com/vue@2"></script>
+    <script src="main.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body>
+    <nav class="next-lesson">
+      <a href="template.html">Next &#10140; Template</a>
+    </nav>
+    <header>
+      <h1>Basic Vue Instance</h1>
+      <p>
+        You can modify the message in the debug console with
+        <span class="code-inline">app.message="Goodbye!"</span>
+      </p>
+    </header>
+    <main>
+      <div id="app">
+        <p>Message from Vue: <span class="hlb">{{ message }}</span></p>
+      </div>
+
+      <script>
+        var app = new Vue({
+          el: '#app',
+          data: { message: 'Hello!' },
+        });
+      </script>
+    </main>
+
+    <pre class="code-display">
+&lt;script src="<span class='hl'>https://unpkg.com/vue@2"</span>>&lt;/script>
+
+&lt;div <span class='hl'>id="app"</span>>Message from Vue: <span class='hl'>{{ message }}</span>&lt;/div&gt;
+
+&lt;script&gt;
+    var app = new Vue({
+        el: <span class='hl'>'#app'</span>,
+        data: {
+            <span class='hl'>message: 'Hello!'</span>,
+        },
+    });
+&lt;/script&gt;</pre>
+  </body>
+</html>

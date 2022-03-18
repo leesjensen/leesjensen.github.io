@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="main.css" />
+    <script src="https://unpkg.com/vue@2"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body>
+    <nav class="next-lesson"><a href="on.html">Next &#10140; On</a></nav>
+    <header>
+      <h1>Filter</h1>
+      <p>
+        You can chain filters in a template to modify the output. Custom filters
+        are created on the Vue instance.
+      </p>
+    </header>
+    <main>
+      <div id="app">
+        <p>
+          Result: <span class="hlb">{{message | reverse | capitalize}}</span>
+        </p>
+        <input v-model="message" />
+      </div>
+
+      <script>
+        Vue.filter('capitalize', function (value) {
+          return value.toUpperCase();
+        });
+
+        var app = new Vue({
+          el: '#app',
+          data: { message: '' },
+          filters: {
+            reverse: function (value) {
+              return value.split('').reverse().join('');
+            },
+          },
+        });
+      </script>
+    </main>
+
+    <pre class="code-display">
+&lt;div id="app">
+  &lt;p>Result: {{message <span class="hl">| reverse | capitalize</span>}}&lt;/p>
+  &lt;input v-model="message" />
+&lt;/div>
+
+&lt;script>
+  <span class="hl">Vue.filter('capitalize', function (value) {
+    return value.toUpperCase();
+  });</span>
+
+  var app = new Vue({
+    el: '#app',
+    data: { message: '' },
+    <span class="hl">filters</span>: {
+      <span class="hl">reverse: function (value) {
+        return value.split('').reverse().join('');
+      }</span>,
+    },
+  });
+&lt;/script>
+    </pre>
+    <script src="main.js"></script>
+  </body>
+</html>

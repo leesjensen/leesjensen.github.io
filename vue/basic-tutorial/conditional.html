@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="main.css" />
+    <script src="https://unpkg.com/vue@2"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body>
+    <nav class="next-lesson">
+      <a href="transition.html">Next &#10140; Transition</a>
+    </nav>
+    <header>
+      <h1>Conditional</h1>
+      <p>
+        <span class="code-inline">v-if, v-else</span> actually remove elements
+        from the DOM. <span class="code-inline">v-show</span> toggles the
+        display state.
+      </p>
+    </header>
+    <main>
+      <div id="app">
+        <p>Current Number: <span class="hlb">{{clickCount}}</span></p>
+        <button v-on:click="++clickCount">Increment</button>
+        <p>
+          The number is:
+          <span v-if="clickCount === 0">Zero</span>
+          <span v-else-if="clickCount % 2 === 0">Even</span>
+          <span v-else>Odd</span>
+          <span v-show="clickCount < 10"> and below 10</span>
+        </p>
+      </div>
+
+      <script>
+        var app = new Vue({
+          el: '#app',
+          data: { clickCount: 0 },
+        });
+      </script>
+    </main>
+
+    <!--- Code for display-->
+    <pre class="code-display">
+&lt;div id="app">
+  &lt;p>Current Number: {{clickCount}}&lt;/p>
+  &lt;button v-on:click="++clickCount">Increment&lt;/button>
+  &lt;p>
+    The number is:
+    &lt;span <span class="hl">v-if</span>="clickCount === 0">Zero&lt;/span>
+    &lt;span <span class="hl">v-else-if</span>="clickCount % 2 === 0">Even&lt;/span>
+    &lt;span <span class="hl">v-else</span>>Odd&lt;/span>
+    &lt;span <span class="hl">v-show</span>="clickCount &lt; 10"> and below 10&lt;/span>
+  &lt;/p>
+&lt;/div>
+
+&lt;script>
+  var app = new Vue({
+    el: '#app',
+    data: { clickCount: 0 },
+  });
+&lt;/script>
+    </pre>
+
+    <script src="main.js"></script>
+  </body>
+</html>

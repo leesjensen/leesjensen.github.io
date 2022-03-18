@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="main.css" />
+    <script src="https://unpkg.com/vue@2"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body>
+    <nav class="next-lesson">
+      <a href="component-template.html">Next &#10140; Component Template</a>
+    </nav>
+    <header>
+      <h1>Component Properties</h1>
+      <p>Components can have properties just like native HTML elements.</p>
+    </header>
+    <main>
+      <div id="app">
+        <app-photo grayscale></app-photo>
+        <app-photo :height="200"></app-photo>
+        <app-photo :width="200" :grayscale="false" blur></app-photo>
+      </div>
+
+      <script>
+        Vue.component('app-photo', {
+          props: {
+            height: { type: Number, default: 100 },
+            width: { type: Number, default: 100 },
+            grayscale: Boolean,
+            blur: Boolean,
+          },
+          template: '<img v-bind:src="imageUrl" />',
+          computed: {
+            imageUrl: function () {
+              const params = [];
+              this.grayscale ? params.push('grayscale') : null;
+              this.blur ? params.push('blur=3') : null;
+              return `https://picsum.photos/seed/${Math.random()}/${
+                this.width
+              }/${this.height}?${params.join('&')}`;
+            },
+          },
+        });
+
+        var app = new Vue({
+          el: '#app',
+        });
+      </script>
+    </main>
+
+    <!--- Code for display-->
+    <pre class="code-display">
+      &lt;div id="app">
+        &lt;app-photo <span class='hl'>grayscale</span>>&lt;/app-photo>
+        &lt;app-photo <span class='hl'>:height="200"</span>>&lt;/app-photo>
+        &lt;app-photo <span class='hl'>:width="200" :grayscale="false" blur</span>>&lt;/app-photo>
+      &lt;/div>
+
+      &lt;script>
+        Vue.component('app-photo', {
+          <span class='hl'>props: {
+            height: { type: Number, default: 100 },
+            width: { type: Number, default: 100 },
+            grayscale: Boolean,
+            blur: Boolean,
+          },</span>
+          template: '&lt;img v-bind:src="imageUrl" />',
+          computed: {
+            imageUrl: function () {
+              const params = [];
+              this.grayscale ? params.push('grayscale') : null;
+              this.blur ? params.push('blur=3') : null;
+              return `https://picsum.photos/seed/${Math.random()}/${
+                this.width
+              }/${this.height}?${params.join('&')}`;
+            },
+          },
+        });
+
+        var app = new Vue({
+          el: '#app',
+        });
+      &lt;/script>
+    </pre>
+
+    <script src="main.js"></script>
+  </body>
+</html>

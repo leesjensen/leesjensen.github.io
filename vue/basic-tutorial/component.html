@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="main.css" />
+    <script src="https://unpkg.com/vue@2"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body>
+    <nav class="next-lesson">
+      <a href="component-prop.html">Next &#10140; Component Props</a>
+    </nav>
+    <header>
+      <h1>Basic Component</h1>
+      <p>
+        Components modularize functionality that is represented by new HTML
+        elements.
+      </p>
+    </header>
+    <main>
+      <div id="app">
+        <app-trooper></app-trooper>
+        <app-trooper></app-trooper>
+        <app-trooper></app-trooper>
+      </div>
+
+      <script>
+        Vue.component('app-trooper', {
+          template: '<div class="trooper">{{operatingNumber}}</div>',
+          data: function () {
+            return {
+              operatingNumber: `TK-${Math.floor(Math.random() * 1000)}`,
+            };
+          },
+        });
+
+        var app = new Vue({
+          el: '#app',
+        });
+      </script>
+    </main>
+
+    <!--- Code for display-->
+    <pre class="code-display">
+&lt;div id="app">
+  &lt;<span class='hl'>app-trooper</span>>&lt;/app-trooper>
+  &lt;app-trooper>&lt;/app-trooper>
+  &lt;app-trooper>&lt;/app-trooper>
+&lt;/div>
+
+&lt;script>
+  Vue.<span class='hl'>component</span>('app-trooper', {
+    <span class='hl'>template</span>: '&lt;div class="trooper">{{operatingNumber}}&lt;/div>',
+    data: function () {
+      return {
+        operatingNumber: `TK-${Math.floor(Math.random() * 1000)}`,
+      };
+    },
+  });
+
+  var app = new Vue({
+    el: '#app',
+  });
+&lt;/script>
+    </pre>
+
+    <script src="main.js"></script>
+  </body>
+</html>

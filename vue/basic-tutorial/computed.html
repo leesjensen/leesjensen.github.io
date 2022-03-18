@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="main.css" />
+    <script src="https://unpkg.com/vue@2"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body>
+    <nav class="next-lesson">
+      <a href="watcher.html">Next &#10140; Watcher</a>
+    </nav>
+    <header>
+      <h1>Computed</h1>
+      <p>
+        Computed properties represent the result of complex computations. Vue
+        will cache the computed property and only update it if the property's
+        dependencies change.
+      </p>
+    </header>
+    <main>
+      <div id="app">
+        <p>Date: {{date}}</p>
+        <p>
+          Locale:
+          <template v-for="(val, key) in locales">
+            <input
+              type="radio"
+              v-bind:id="key"
+              v-bind:value="val"
+              v-model="localeCode"
+            />
+            <label v-bind:for="key">{{key}}</label>
+          </template>
+        </p>
+        <p><span class="hlb">{{localizedDate}}</span></p>
+      </div>
+
+      <script>
+        const standardLocales = {
+          English: 'en-US',
+          German: 'de-DE',
+          Arabic: 'ar-EG',
+          Japanese: 'ja-JP-u-ca-japanese',
+        };
+        var app = new Vue({
+          el: '#app',
+          data: {
+            date: new Date(),
+            locales: standardLocales,
+            localeCode: 'de-DE',
+          },
+          computed: {
+            localizedDate: function () {
+              return this.date.toLocaleString(this.localeCode);
+            },
+          },
+        });
+      </script>
+    </main>
+
+    <!--- Code for display-->
+    <pre class="code-display">
+&lt;div id="app">
+  &lt;p>Date: {{date}}&lt;/p>
+  &lt;p>
+    Locale:
+    &lt;template v-for="(val, key) in locales">
+      &lt;input type="radio" :id="key" :value="val" <span class="hl">v-model="localeCode"</span> />
+      &lt;label v-bind:for="key">{{key}}&lt;/label>
+    &lt;/template>
+  &lt;/p>
+  &lt;p>&lt;span class="hlb"><span class="hl">{{localizedDate}}</span>&lt;/span>&lt;/p>
+&lt;/div>
+
+&lt;script>
+  const standardLocales = {
+    English: 'en-US',
+    German: 'de-DE',
+    Arabic: 'ar-EG',
+    Japanese: 'ja-JP-u-ca-japanese',
+  };
+  var app = new Vue({
+    el: '#app',
+    data: {
+      date: new Date(),
+      locales: standardLocales,
+      localeCode: 'de-DE',
+    },
+    <span class="hl">computed</span>: {
+      <span class="hl">localizedDate</span>: function () {
+        return this.date.toLocaleString(<span class="hl">this.localeCode</span>);
+      },
+    },
+  });
+&lt;/script>
+    </pre>
+
+    <script src="main.js"></script>
+  </body>
+</html>

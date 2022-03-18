@@ -1,0 +1,54 @@
+* {
+  box-sizing: border-box;
+}
+
+section.gallery {
+  background: #68899f;
+  color: white;
+  padding: 1em;
+}
+
+figure.photo {
+  display: inline-block;
+  padding: 5px;
+  border: solid hsl(44, 100%, 60%) 2px;
+  background: hsl(44, 100%, 38%);
+  margin: 0.25em 0.5em;
+  position: relative;
+}
+
+figure.photo > img {
+  border-radius: 50%;
+  height: 100px;
+  width: 100px;
+  background: hsl(44, 100%, 27%);
+}
+
+figure.photo > figcaption {
+  background: #634600;
+  color: #fff;
+  font: italic smaller sans-serif;
+  padding: 3px;
+  text-align: center;
+}
+
+figure.photo > div.price {
+  width: 90%;
+  text-align: right;
+  background: #e8e9f8;
+  color: black;
+  border: solid rgb(104, 104, 104) thin;
+  position: absolute;
+  right: -6px;
+  top: 3px;
+  padding: 3px 10px;
+  border-radius: 5px 0 0 5px;
+  font-size: smaller;
+}
+
+figure.photo > div.promote {
+  color: white;
+  background: #1f5f91;
+  border: solid rgb(58, 54, 105) thin;
+  text-transform: uppercase;
+}

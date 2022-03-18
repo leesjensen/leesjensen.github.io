@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="main.css" />
+    <script src="https://unpkg.com/vue@2"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body>
+    <nav class="next-lesson">
+      <a href="binding.html">Next &#10140; Binding</a>
+    </nav>
+    <header>
+      <h1>On</h1>
+      <p>
+        <span class="code-inline">v-on</span> allows you to handle events. It
+        may be abbreviated as <span class="code-inline">@</span>. Events can
+        have modifiers such as the enter on keyup.
+      </p>
+    </header>
+    <main>
+      <div id="app">
+        <p>Currently: <span class="hlb">{{order}}</span></p>
+        <button v-on:click="set('pork')">Pork</button>
+        <button @click="set('chicken')">Chicken</button>
+        <input v-on:keyup.enter="onEnter" />
+      </div>
+
+      <script>
+        var app = new Vue({
+          el: '#app',
+          data: { order: 'not set' },
+          methods: {
+            set: function (value) {
+              this.order = value;
+            },
+            onEnter: function (e) {
+              this.set(e.target.value);
+            },
+          },
+        });
+      </script>
+    </main>
+
+    <!--- Code for display-->
+    <pre class="code-display">
+&lt;div id="app">
+  &lt;p>Currently: {{order}}&lt;/p>
+  &lt;button <span class="hl">v-on:click</span>="set('pork')">Pork&lt;/button>
+  &lt;button <span class="hl">@click</span>="set('chicken')">Chicken&lt;/button>
+  &lt;input <span class="hl">v-on:keyup.enter</span>="onEnter" />
+&lt;/div>
+
+&lt;script>
+  var app = new Vue({
+    el: '#app',
+    data: { order: 'not set' },
+    methods: {
+      <span class="hl">set</span>: function (value) {
+        this.order = value;
+      },
+      <span class="hl">onEnter</span>: function (e) {
+        this.set(e.target.value);
+      },
+    },
+  });
+&lt;/script>
+    </pre>
+
+    <script src="main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="main.css" />
+    <script src="https://unpkg.com/vue@2"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body>
+    <nav class="next-lesson">
+      <a href="component.html">Next &#10140; Component</a>
+    </nav>
+    <header>
+      <h1>Lifecycle</h1>
+      <p>
+        Lifecycle events provide notification for creation and destruction
+        events.
+      </p>
+    </header>
+    <main>
+      <div id="app">Nothing here</div>
+
+      <script>
+        var app = new Vue({
+          el: '#app',
+          beforeCreate: function () {
+            const appDiv = document.querySelector('#app');
+            appDiv.textContent = 'The answer: {{30+12}}';
+          },
+        });
+      </script>
+    </main>
+
+    <!--- Code for display-->
+    <pre class="code-display">
+&lt;div id="app">Nothing here&lt;/div>
+
+&lt;script>
+  var app = new Vue({
+    el: '#app',
+    <span class="hl">beforeCreate</span>: function () {
+      const appDiv = document.querySelector('#app');
+      appDiv.textContent = 'The answer: {{30+12}}';
+    },
+  });
+&lt;/script>
+    </pre>
+
+    <script src="main.js"></script>
+  </body>
+</html>

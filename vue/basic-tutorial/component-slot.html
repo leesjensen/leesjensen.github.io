@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="main.css" />
+    <link rel="stylesheet" href="slot.css" />
+    <script src="https://unpkg.com/vue@2"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body>
+    <nav class="next-lesson">
+      <a href="component-aggregation.html"
+        >Next &#10140; Component Aggregation</a
+      >
+    </nav>
+
+    <header>
+      <h1>Component Slots</h1>
+      <p>
+        Components can define content children as represented by template slots.
+        There is always a default slot. Slots can be named and have default
+        content.
+      </p>
+    </header>
+    <main>
+      <div id="app">
+        <app-layout>
+          <template v-slot:header><div>Header</div></template>
+          <template v-slot:sidenav><div>Side Navigation</div></template>
+          <template v-slot:content><div>Content Body</div></template>
+        </app-layout>
+      </div>
+
+      <script>
+        Vue.component('app-layout', {
+          template: `
+            <section class='layout'>
+              <div class="layout-header">
+                <slot name="header"></slot>
+              </div>
+              <div class="layout-main">
+                <div class="layout-sidenav">
+                  <slot name="sidenav"></slot>
+                </div>
+                <div class="layout-content">
+                  <slot name="content"></slot>
+                </div>
+              </div>
+              <div class="layout-footer">
+                <slot name="footer">Default footer content</slot>
+              </div>
+            </section>
+          `,
+        });
+
+        var app = new Vue({
+          el: '#app',
+        });
+      </script>
+    </main>
+
+    <!--- Code for display-->
+    <pre class="code-display">
+&lt;div id="app">
+  &lt;app-layout>
+    <span class='hl'>&lt;template v-slot:header</span>>&lt;div>Header&lt;/div>&lt;/template>
+    &lt;template v-slot:sidenav>&lt;div>Side Navigation&lt;/div>&lt;/template>
+    &lt;template v-slot:content>&lt;div>Content Body&lt;/div>&lt;/template>
+  &lt;/app-layout>
+&lt;/div>
+
+&lt;script>
+  Vue.component('app-layout', {
+    template: `
+      &lt;section class='layout'>
+        &lt;div class="layout-header">
+          <span class='hl'>&lt;slot name="header">&lt;/slot></span>
+        &lt;/div>
+        &lt;div class="layout-main">
+          &lt;div class="layout-sidenav">
+            &lt;slot name="sidenav">&lt;/slot>
+          &lt;/div>
+          &lt;div class="layout-content">
+            &lt;slot name="content">&lt;/slot>
+          &lt;/div>
+        &lt;/div>
+        &lt;div class="layout-footer">
+          &lt;slot name="footer">Default footer content&lt;/slot>
+        &lt;/div>
+      &lt;/section>
+    `,
+  });
+
+  var app = new Vue({
+    el: '#app',
+  });
+&lt;/script>
+    </pre>
+
+    <script src="main.js"></script>
+  </body>
+</html>

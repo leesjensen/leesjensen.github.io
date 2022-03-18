@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="main.css" />
+    <link rel="stylesheet" href="photo.css" />
+    <script src="https://unpkg.com/vue@2"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body>
+    <nav class="next-lesson">
+      <a href="component-slot.html">Next &#10140; Component Slots</a>
+    </nav>
+
+    <header>
+      <h1>Component Enhanced Template</h1>
+      <p>The template for a component can be very complicated.</p>
+    </header>
+    <main>
+      <div id="app">
+        <app-photo caption="Beauty" price="$99.99"></app-photo>
+        <app-photo caption="Joy" price="$2,000"></app-photo>
+        <app-photo caption="Fear" price="free"></app-photo>
+        <app-photo caption="Solitude" price="$1,300"></app-photo>
+        <app-photo caption="Anger" price="Inquire"></app-photo>
+      </div>
+
+      <script>
+        Vue.component('app-photo', {
+          props: ['caption', 'price'],
+          template: `
+            <figure class='photo'>
+              <img :src="imageUrl" />
+              <figcaption>{{caption}}</figcaption>
+              <div :class="['price', {promote:promoted}]">{{price}}</div>
+            </figure>
+          `,
+          computed: {
+            imageUrl: function () {
+              return `https://picsum.photos/seed/${Math.random()}/100/100`;
+            },
+            promoted: function () {
+              return !this.price.startsWith('$');
+            },
+          },
+        });
+
+        var app = new Vue({
+          el: '#app',
+        });
+      </script>
+    </main>
+
+    <!--- Code for display-->
+    <pre class="code-display">
+&lt;div id="app">
+  &lt;app-photo caption="Beauty" price="$99.99">&lt;/app-photo>
+  &lt;app-photo caption="Joy" price="$2,000">&lt;/app-photo>
+  &lt;app-photo caption="Fear" price="free">&lt;/app-photo>
+  &lt;app-photo caption="Solitude" price="$1,300">&lt;/app-photo>
+  &lt;app-photo caption="Anger" price="Inquire">&lt;/app-photo>
+&lt;/div>
+
+&lt;script>
+  Vue.component('app-photo', {
+    props: <span class='hl'>['caption', 'price']</span>,
+    <span class='hl'>template: `
+      &lt;figure class='photo'>
+        &lt;img :src="imageUrl" />
+        &lt;figcaption>{{caption}}&lt;/figcaption>
+        &lt;div :class="['price', {promote:promoted}]">{{price}}&lt;/div>
+      &lt;/figure>
+    `,</span>
+    computed: {
+      imageUrl: function () {
+        return `https://picsum.photos/seed/${Math.random()}/100/100`;
+      },
+      promoted: function () {
+        return !this.price.startsWith('$');
+      },
+    },
+  });
+
+  var app = new Vue({
+    el: '#app',
+  });
+&lt;/script>
+
+    </pre>
+
+    <script src="main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="main.css" />
+    <script src="https://unpkg.com/vue@2"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body>
+    <nav class="next-lesson">
+      <a href="computed.html">Next &#10140; Computed</a>
+    </nav>
+
+    <header>
+      <h1>Text &amp; HTML Content</h1>
+      <p>
+        You can modify DOM content. Do not allow injection of external scripts.
+        Such as:
+      </p>
+      <pre>
+    &lt;img src='x'
+      onerror='fetch("https://cs260.click/hacked.json")
+                .then(r=>r.json())
+                .then(j=>alert(j.code))'
+    />
+      </pre>
+    </header>
+    <main>
+      <div id="app">
+        <label>textContent:</label>
+        <div v-text="content"></div>
+        <label>innerHTML:</label>
+        <div v-html="content"></div>
+        <textarea v-model="content">hello</textarea>
+      </div>
+
+      <script>
+        var app = new Vue({
+          el: '#app',
+          data: { content: 'text' },
+        });
+      </script>
+    </main>
+
+    <!--- Code for display-->
+    <pre class="code-display">
+&lt;div id="app">
+  &lt;label>textContent:&lt;/label>
+  &lt;div <span class='hl'>v-text="content"</span>>&lt;/div>
+  &lt;label>innerHTML:&lt;/label>
+  &lt;div <span class='hl'>v-html="content"</span>>&lt;/div>
+  &lt;textarea <span class='hl'>v-model="content"</span>>hello&lt;/textarea>
+&lt;/div>
+
+&lt;script>
+  var app = new Vue({
+    el: '#app',
+    data: {<span class='hl'>content</span>: 'text'},
+  });
+&lt;/script></pre>
+    <script src="main.js"></script>
+  </body>
+</html>
