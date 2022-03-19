@@ -1,0 +1,66 @@
+body {
+  background: #fafad2;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+main {
+  border: dashed rgb(53, 53, 53) 3px;
+  background: white;
+  padding: 1em;
+}
+
+.nav-bar {
+  background-color: #be710b;
+  padding: 0.8em;
+  margin-top: 1em;
+  text-align: left;
+  color: #aaaaaa;
+}
+
+.nav-bar a {
+  padding: 0.2em 1em;
+}
+
+a:link,
+a:visited {
+  outline: none;
+  text-decoration: none;
+  color: #efefef;
+}
+
+a.active {
+  background: hsl(0deg 64% 35% / 47%);
+}
+
+textarea {
+  width: 100%;
+  height: 5em;
+  margin: 1em 0;
+}
+
+.hl {
+  color: #ffb700;
+}
+
+.router-page {
+  height: 5em;
+  background: rgb(103, 103, 146);
+  color: white;
+  font-size: 2em;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.home {
+  background: rgb(10, 104, 2);
+}
+
+.about {
+  background: rgb(107, 1, 1);
+}
+
+.settings {
+  background: rgb(103, 103, 146);
+}

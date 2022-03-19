@@ -88,6 +88,11 @@ const content = [
         title: 'CSS Grid',
       },
       {
+        class: 'project',
+        link: 'css/lab1-photographer',
+        title: 'Lab 1: Photographer',
+      },
+      {
         class: 'slide',
         link: 'https://docs.google.com/presentation/d/1fRnXFrAKR7MV4FoMb3QUPv-1HkhxBfYqs6aw_RC5NQk/edit?usp=sharing',
         title: '2.3 - Design',
@@ -118,6 +123,11 @@ const content = [
         class: 'slide',
         title: '3.1 - JS Basics',
         link: 'https://docs.google.com/presentation/d/15Ni_4sM0qNBkelF7FGdH6JntZQiH5WY1QSDq3PKvR7U/edit?usp=sharing',
+      },
+      {
+        class: 'exercise',
+        title: 'J1, J2, J3: Basics',
+        link: 'js/j1-j2-j3-basics',
       },
       {
         class: 'slide',
@@ -158,6 +168,11 @@ const content = [
         class: 'slide',
         title: '3.5 - Debugging &amp; Performance',
         link: 'https://docs.google.com/presentation/d/12TwA11lXpqqUudhnxqchmANkL33jKH0zNJIVxtsYA18/edit?usp=sharing',
+      },
+      {
+        class: 'project',
+        title: 'Lab 2: Weather',
+        link: 'js/lab2-weather',
       },
       {
         class: 'slide',
@@ -210,6 +225,16 @@ const content = [
         class: 'slide',
         title: '4.4 - Vue Router',
         link: 'https://docs.google.com/presentation/d/1dZpn822ZIchuKixoo3zjRuU944zMYNVKB6D07DIfNzY/edit?usp=sharing',
+      },
+      {
+        class: 'demo',
+        title: 'Basic Router',
+        link: 'vue/basic-router-tutorial',
+      },
+      {
+        class: 'demo',
+        title: 'Vue Router',
+        link: 'vue/router-demo',
       },
       {
         class: 'slide',
