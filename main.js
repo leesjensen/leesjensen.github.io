@@ -241,6 +241,11 @@ const content = [
         title: '4.5 - Vue+',
         link: 'https://docs.google.com/presentation/d/1QoXvqO6ZeoEwNPNKL97yh66r_-GRqs7EJ2gZIhB8Ils/edit?usp=sharing',
       },
+      {
+        class: 'demo',
+        title: 'TypeScript',
+        link: 'vue/typescript',
+      },
     ],
   },
 ];
