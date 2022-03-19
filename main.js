@@ -46,6 +46,11 @@ const content = [
         link: 'https://docs.google.com/presentation/d/1fdRNqK6dlWi08_88BnVjYAdYWNfqwGhrQrv6GE7TdYc/edit?usp=sharing',
       },
       {
+        class: 'exercise',
+        title: 'D6: HTML Basics',
+        link: 'html/intro',
+      },
+      {
         class: 'slide',
         title: '1.4 - Git &amp; HTTP',
         link: 'https://docs.google.com/presentation/d/1DnI1P4wV-ndbDW59QeDppIyBE4u-mZuAEbXLVuOgDAo/edit?usp=sharing',
@@ -74,12 +79,12 @@ const content = [
       },
       {
         class: 'demo',
-        link: 'css/css-flex',
+        link: 'css/flex',
         title: 'CSS Flex',
       },
       {
         class: 'demo',
-        link: 'css/css-grid',
+        link: 'css/grid',
         title: 'CSS Grid',
       },
       {
