@@ -202,6 +202,21 @@ const content = [
         link: 'vue/basic-tutorial',
       },
       {
+        class: 'exercise',
+        title: 'V0: Rest Cities',
+        link: 'vue/v0-rest',
+      },
+      {
+        class: 'exercise',
+        title: 'V1: Learning Vue',
+        link: 'vue/v1-learning',
+      },
+      {
+        class: 'exercise',
+        title: 'V2: Todo List',
+        link: 'vue/v2-todo',
+      },
+      {
         class: 'project',
         title: 'Lab 3a: XKCD Browser',
         link: 'vue/lab3a-xkcd',
@@ -225,6 +240,11 @@ const content = [
         class: 'demo',
         title: 'CLI Users',
         link: 'vue/cli-users',
+      },
+      {
+        class: 'exercise',
+        title: 'V3: CLI',
+        link: 'vue/v3-cli',
       },
       {
         class: 'project',

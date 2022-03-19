@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Vue REST</title>
+    <link rel="stylesheet" href="main.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </head>
+
+  <body>
+    <div id="app">
+      <h1>List Utah Cities</h1>
+      <input type="text" v-model="prefix" v-on:keyup="fetchCities" />
+      <ul>
+        <li v-for="city in cities">{{ city }}</li>
+      </ul>
+    </div>
+    <script src="https://unpkg.com/vue@2"></script>
+    <script src="main.js"></script>
+  </body>
+</html>
