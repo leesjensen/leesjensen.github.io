@@ -217,6 +217,16 @@ const content = [
         link: 'https://docs.google.com/presentation/d/1gfb6afyhari2bZTEHvWMrYIpAGoL1AH1iNTTdVDew_M/edit?usp=sharing',
       },
       {
+        class: 'demo',
+        title: 'CLI Demo',
+        link: 'vue/cli-demo',
+      },
+      {
+        class: 'demo',
+        title: 'CLI Users',
+        link: 'vue/cli-users',
+      },
+      {
         class: 'project',
         title: 'Lab 3b: Grocery Store',
         link: 'vue/lab3b-grocery',
